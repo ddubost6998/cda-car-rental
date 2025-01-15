@@ -2,7 +2,6 @@ package fr.hb.car_rental.controller;
 
 import fr.hb.car_rental.model.Car;
 import fr.hb.car_rental.service.CarService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +12,11 @@ import java.util.List;
 @RequestMapping("/cars")
 public class CarController {
 
-    @Autowired
-    private CarService carService;
+    private final CarService carService;
+
+    public CarController(CarService carService) {
+        this.carService = carService;
+    }
 
     @GetMapping
     public String getAllCars(Model model) {
