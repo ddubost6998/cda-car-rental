@@ -1,0 +1,12 @@
+/Users/ddubost6998/Fichiers/Dev/Human_Booster/CDA/06_Thymeleaf/car-rental/cda-car-rental/src/main/java/fr/hb/car_rental/CarRentalApplication.java
+/Users/ddubost6998/Fichiers/Dev/Human_Booster/CDA/06_Thymeleaf/car-rental/cda-car-rental/src/main/java/fr/hb/car_rental/config/InternationalizationConfig.java
+/Users/ddubost6998/Fichiers/Dev/Human_Booster/CDA/06_Thymeleaf/car-rental/cda-car-rental/src/main/java/fr/hb/car_rental/controller/CarController.java
+/Users/ddubost6998/Fichiers/Dev/Human_Booster/CDA/06_Thymeleaf/car-rental/cda-car-rental/src/main/java/fr/hb/car_rental/controller/ContractController.java
+/Users/ddubost6998/Fichiers/Dev/Human_Booster/CDA/06_Thymeleaf/car-rental/cda-car-rental/src/main/java/fr/hb/car_rental/controller/CustomerController.java
+/Users/ddubost6998/Fichiers/Dev/Human_Booster/CDA/06_Thymeleaf/car-rental/cda-car-rental/src/main/java/fr/hb/car_rental/controller/HomeController.java
+/Users/ddubost6998/Fichiers/Dev/Human_Booster/CDA/06_Thymeleaf/car-rental/cda-car-rental/src/main/java/fr/hb/car_rental/model/Car.java
+/Users/ddubost6998/Fichiers/Dev/Human_Booster/CDA/06_Thymeleaf/car-rental/cda-car-rental/src/main/java/fr/hb/car_rental/model/Contract.java
+/Users/ddubost6998/Fichiers/Dev/Human_Booster/CDA/06_Thymeleaf/car-rental/cda-car-rental/src/main/java/fr/hb/car_rental/model/Customer.java
+/Users/ddubost6998/Fichiers/Dev/Human_Booster/CDA/06_Thymeleaf/car-rental/cda-car-rental/src/main/java/fr/hb/car_rental/service/CarService.java
+/Users/ddubost6998/Fichiers/Dev/Human_Booster/CDA/06_Thymeleaf/car-rental/cda-car-rental/src/main/java/fr/hb/car_rental/service/ContractService.java
+/Users/ddubost6998/Fichiers/Dev/Human_Booster/CDA/06_Thymeleaf/car-rental/cda-car-rental/src/main/java/fr/hb/car_rental/service/CustomerService.java

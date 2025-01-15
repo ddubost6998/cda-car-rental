@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{car.add.title}"></title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div th:replace="~{fragments/menu :: menu}"></div>
+
+<div class="container">
+    <h1 th:text="#{car.add.title}"></h1>
+
+    <form th:action="@{/cars/add}" method="post" th:object="${car}">
+        <div class="form-group">
+            <label for="registration" th:text="#{car.registration}"></label>
+            <input type="text" class="form-control" id="registration" th:field="*{registration}">
+        </div>
+        <div class="form-group">
+            <label for="model" th:text="#{car.model}"></label>
+            <input type="text" class="form-control" id="model" th:field="*{model}">
+        </div>
+        <div class="form-group">
+            <label for="brand" th:text="#{car.brand}"></label>
+            <input type="text" class="form-control" id="brand" th:field="*{brand}">
+        </div>
+        <div class="form-group">
+            <label for="category" th:text="#{car.category}"></label>
+            <select class="form-control" id="category" th:field="*{category}">
+                <option th:each="category : ${T(fr.hb.car_rental.model.Car.Category).values()}"
+                        th:value="${category}" th:text="${category}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="status" th:text="#{car.status}"></label>
+            <select class="form-control" id="status" th:field="*{status}">
+                <option th:each="status : ${T(fr.hb.car_rental.model.Car.Status).values()}"
+                        th:value="${status}" th:text="${status}"></option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" th:text="#{action.add}"></button>
+    </form>
+</div>
+</body>
+</html>

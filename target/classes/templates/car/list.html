@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="#{car.list.title}"></title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div th:replace="~{fragments/menu :: menu}"></div>
+
+<h1 th:text="#{car.list.title}"></h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th th:text="#{car.registration}"></th>
+    <th th:text="#{car.model}"></th>
+    <th th:text="#{car.brand}"></th>
+    <th th:text="#{car.category}"></th>
+    <th th:text="#{car.status}"></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="car : ${cars}">
+    <td th:text="${car.registration}"></td>
+    <td th:text="${car.model}"></td>
+    <td th:text="${car.brand}"></td>
+    <td th:text="${car.category}"></td>
+    <td th:text="${car.status}"></td>
+    <td>
+      <a th:href="@{/cars/{id}(id=${car.id})}" th:text="#{action.view}"></a>
+      <a th:href="@{/cars/edit/{id}(id=${car.id})}" th:text="#{action.edit}"></a>
+      <a th:href="@{/cars/delete/{id}(id=${car.id})}" th:text="#{action.delete}"></a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<a th:href="@{/cars/add}" class="btn btn-primary" th:text="#{action.add}"></a>
+</body>
+</html>
