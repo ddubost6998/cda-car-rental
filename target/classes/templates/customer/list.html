@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="#{customer.list.title}"></title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div th:replace="~{fragments/menu :: menu}"></div>
+
+<h1 th:text="#{customer.list.title}"></h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th th:text="#{customer.firstName}"></th>
+    <th th:text="#{customer.lastName}"></th>
+    <th th:text="#{customer.email}"></th>
+    <th th:text="#{customer.drivingLicence}"></th>
+    <th th:text="#{customer.birthDate}"></th>
+    <th th:text="#{customer.gender}"></th>
+    <th th:text="#{customer.blocked}"></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="customer : ${customers}">
+    <td th:text="${customer.firstName}"></td>
+    <td th:text="${customer.lastName}"></td>
+    <td th:text="${customer.email}"></td>
+    <td th:text="${customer.drivingLicence}"></td>
+    <td th:text="${customer.birthDate}"></td>
+    <td th:text="${customer.gender}"></td>
+    <td th:text="${customer.blocked}"></td>
+    <td>
+      <a th:href="@{/customers/{id}(id=${customer.id})}" th:text="#{action.view}"></a>
+      <a th:href="@{/customers/edit/{id}(id=${customer.id})}" th:text="#{action.edit}"></a>
+      <a th:href="@{/customers/delete/{id}(id=${customer.id})}" th:text="#{action.delete}"></a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<a th:href="@{/customers/add}" class="btn btn-primary" th:text="#{action.add}"></a>
+</body>
+</html>

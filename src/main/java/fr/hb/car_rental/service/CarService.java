@@ -25,12 +25,14 @@ public class CarService {
     }
 
     public void saveCar(Car car) {
-        Car existingCar = findCarById(car.getId());
-        if (existingCar != null) {
-            existingCar.setRegistration(car.getRegistration());
-            existingCar.setModel(car.getModel());
-        } else {
+        if (car.getId() == null) {
             carList.add(car);
+        } else {
+            Car existingCar = findCarById(car.getId());
+            if (existingCar != null) {
+                existingCar.setRegistration(car.getRegistration());
+                existingCar.setModel(car.getModel());
+            }
         }
     }
 

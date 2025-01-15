@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="#{contract.list.title}"></title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div th:replace="~{fragments/menu :: menu}"></div>
+
+<h1 th:text="#{contract.list.title}"></h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th th:text="#{contract.id}"></th>
+    <th th:text="#{contract.car}"></th>
+    <th th:text="#{contract.customer}"></th>
+    <th th:text="#{contract.startDate}"></th>
+    <th th:text="#{contract.endDate}"></th>
+    <th th:text="#{contract.totalPrice}"></th>
+    <th th:text="#{contract.status}"></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="contract : ${contracts}">
+    <td th:text="${contract.id}"></td>
+    <td th:text="${contract.car.registration}"></td>
+    <td th:text="${contract.customer.firstName} + ' ' + ${contract.customer.lastName}"></td>
+    <td th:text="${contract.startDate}"></td>
+    <td th:text="${contract.endDate}"></td>
+    <td th:text="${contract.totalPrice}"></td>
+    <td th:text="${contract.status}"></td>
+    <td>
+      <a th:href="@{/contracts/{id}(id=${contract.id})}" th:text="#{action.view}"></a>
+      <a th:href="@{/contracts/edit/{id}(id=${contract.id})}" th:text="#{action.edit}"></a>
+      <a th:href="@{/contracts/delete/{id}(id=${contract.id})}" th:text="#{action.delete}"></a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<a th:href="@{/contracts/add}" class="btn btn-primary" th:text="#{action.add}"></a>
+</body>
+</html>

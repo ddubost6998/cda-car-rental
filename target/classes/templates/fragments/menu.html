@@ -11,14 +11,11 @@
       <li class="nav-item"><a class="nav-link" th:href="@{/contracts}" th:text="#{menu.contracts}"></a></li>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span th:text="#{language}"></span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" th:href="@{?lang=fr}"><span th:text="#{language.french}"></span></a>
-          <a class="dropdown-item" th:href="@{?lang=en}"><span th:text="#{language.english}"></span></a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="?lang=fr">Français</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="?lang=en">English</a>
       </li>
     </ul>
   </nav>

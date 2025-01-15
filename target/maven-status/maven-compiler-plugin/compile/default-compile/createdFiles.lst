@@ -1,12 +1,12 @@
 fr/hb/car_rental/CarRentalApplication.class
-fr/hb/car_rental/model/Contract.class
 fr/hb/car_rental/controller/CarController.class
 fr/hb/car_rental/config/InternationalizationConfig.class
 fr/hb/car_rental/service/CarService.class
 fr/hb/car_rental/service/ContractService.class
-fr/hb/car_rental/service/CustomerService.class
 fr/hb/car_rental/model/Customer.class
 fr/hb/car_rental/model/Car.class
-fr/hb/car_rental/controller/HomeController.class
 fr/hb/car_rental/controller/ContractController.class
 fr/hb/car_rental/controller/CustomerController.class
+fr/hb/car_rental/model/Contract.class
+fr/hb/car_rental/service/CustomerService.class
+fr/hb/car_rental/controller/HomeController.class

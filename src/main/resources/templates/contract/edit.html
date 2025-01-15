@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="#{contract.edit.title}"></title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div th:replace="~{fragments/menu :: menu}"></div>
+
+<div class="container">
+  <h1 th:text="#{contract.edit.title}"></h1>
+
+  <form th:action="@{/contracts/edit/{id}(id=${contract.id})}" method="post" th:object="${contract}">
+    <input type="hidden" th:field="*{id}">
+    <div class="form-group">
+      <label for="car" th:text="#{contract.car}"></label>
+      <select class="form-control" id="car" th:field="*{car}">
+        <option th:each="car : ${cars}" th:value="${car.id}" th:text="${car.registration}"></option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="customer" th:text="#{contract.customer}"></label>
+      <select class="form-control" id="customer" th:field="*{customer}">
+        <option th:each="customer : ${customers}" th:value="${customer.id}" th:text="${customer.firstName} + ' ' + ${customer.lastName}"></option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="startDate" th:text="#{contract.startDate}"></label>
+      <input type="date" class="form-control" id="startDate" th:field="*{startDate}">
+    </div>
+    <div class="form-group">
+      <label for="endDate" th:text="#{contract.endDate}"></label>
+      <input type="date" class="form-control" id="endDate" th:field="*{endDate}">
+    </div>
+    <div class="form-group">
+      <label for="totalPrice" th:text="#{contract.totalPrice}"></label>
+      <input type="number" class="form-control" id="totalPrice" th:field="*{totalPrice}">
+    </div>
+    <div class="form-group">
+      <label for="status" th:text="#{contract.status}"></label>
+      <select class="form-control" id="status" th:field="*{status}">
+        <option th:each="status : ${T(fr.hb.car_rental.model.Contract.Status).values()}"
+                th:value="${status}" th:text="${status}"></option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" th:text="#{action.save}"></button>
+  </form>
+</div>
+</body>
+</html>
