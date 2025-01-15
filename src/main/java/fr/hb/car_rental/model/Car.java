@@ -9,7 +9,7 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotBlank(message = "L'identifiant de l'équipe est obligatoire")
-    private int id;
+    private Long id;
 
     @NotBlank
     @Column(unique = true)
@@ -30,7 +30,7 @@ public class Car {
     public Car() {
     }
 
-    public Car(int id, String registration, String model, String brand, String category, String status) {
+    public Car(Long id, String registration, String model, String brand, String category, String status) {
         this.id = id;
         this.registration = registration;
         this.model = model;
@@ -39,11 +39,11 @@ public class Car {
         this.status = status;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
