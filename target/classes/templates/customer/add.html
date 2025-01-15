@@ -20,6 +20,40 @@
       <label for="lastName" th:text="#{customer.lastName}"></label>
       <input type="text" class="form-control" id="lastName" th:field="*{lastName}">
     </div>
+    <div class="form-group">
+      <label for="email" th:text="#{customer.email}"></label>
+      <input type="email" class="form-control" id="email" th:field="*{email}">
+    </div>
+    <div class="form-group">
+      <label for="drivingLicence" th:text="#{customer.drivingLicence}"></label>
+      <input type="text" class="form-control" id="drivingLicence" th:field="*{drivingLicence}">
+    </div>
+    <div class="form-group">
+      <label for="birthDate" th:text="#{customer.birthDate}"></label>
+      <input type="date" class="form-control" id="birthDate" th:field="*{birthDate}">
+    </div>
+    <div class="form-group">
+      <label th:text="#{customer.gender}"></label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="genderM" name="gender" th:value="'M'" th:field="*{gender}">
+          <label class="form-check-label" for="genderM" th:text="'M'"></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="genderF" name="gender" th:value="'F'" th:field="*{gender}">
+          <label class="form-check-label" for="genderF" th:text="'F'"></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="genderO" name="gender" th:value="'O'" th:field="*{gender}">
+          <label class="form-check-label" for="genderO" th:text="'Autre'"></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="blocked" th:field="*{blocked}">
+      <label class="form-check-label" for="blocked" th:text="#{customer.blocked}"></label>
+    </div>
+    <button type="submit" class="btn btn-primary" th:text="#{action.add}"></button>
   </form>
 </div>
 </body>
